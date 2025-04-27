@@ -13,9 +13,9 @@
             <li>Titulo: {{ libro.titulo }}</li>
             <li>Fecha de publicacion: {{ libro.fecha_publicacion }}</li>
         </ul>
-        <p>Volver a la lista de Libros: <a href="{% url 'books:libros_list' %}">LISTA DE LIBROS</a></p>
+        <p>Volver a la lista de Libros: <a href="{% url 'libro:list' %}">LISTA DE LIBROS</a></p>
     {% else %}
         <h2>Libro no encontrada</h2>
-        <p>Puedes buscarlo en la <a href="{% url 'books:libros_list' %}">LISTA DE LIBROS</a>.</p>    
+        <p>Puedes buscarlo en la <a href="{% url 'libro:list' %}">LISTA DE LIBROS</a>.</p>    
     {% endif %}
 {% endblock %}

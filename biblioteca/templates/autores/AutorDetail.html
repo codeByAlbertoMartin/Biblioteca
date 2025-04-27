@@ -12,9 +12,9 @@
             <li>Nombre: {{ autor.nombre }}</li>
             <li>Fecha de Nacimiento: {{ autor.fec_nac|date:"d/m/Y" }}</li>
         </ul>
-        <p>Volver a la lista de uatores: <a href="{% url 'books:autor_list' %}">LISTA DE AUTORES</a></p>
+        <p>Volver a la lista de uatores: <a href="{% url 'autor:list' %}">LISTA DE AUTORES</a></p>
     {% else %}
         <h2>Autor no encontrado</h2>
-        <p>Puedes buscarlo en la <a href="{% url 'books:autor_list' %}">LISTA DE AUTORES</a>.</p>    
+        <p>Puedes buscarlo en la <a href="{% url 'autor:list' %}">LISTA DE AUTORES</a>.</p>    
     {% endif %}
 {% endblock %}

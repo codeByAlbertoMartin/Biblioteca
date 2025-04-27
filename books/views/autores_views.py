@@ -31,7 +31,7 @@ class AutorCreateView(CreateView):
         'sitio_web','premios'
     ]
     template_name="autores/AutorCreate.html"
-    success_url=reverse_lazy("books:autores_list")
+    success_url=reverse_lazy("autor:list")
 
 
 class AutorUpdateView(UpdateView):
@@ -44,10 +44,10 @@ class AutorUpdateView(UpdateView):
 
     ]
     template_name="autores/AutorUpdate.html"
-    success_url=reverse_lazy("books:autores_list")
+    success_url=reverse_lazy("autor:list")
 
 
 class AutorDeleteView(DeleteView):
     model= Autor
     template_name="autores/AutorDelete.html"
-    success_url=reverse_lazy("books:autores_list")
+    success_url=reverse_lazy("autor:list")

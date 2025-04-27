@@ -1,0 +1,14 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Editorial{% endblock%}
+
+{% block page_title %}Pagina de Editorial {% endblock %}
+
+{% block page_content%}
+    <h2>Editar editorial</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Guardar</button>
+    </form> 
+{% endblock %}

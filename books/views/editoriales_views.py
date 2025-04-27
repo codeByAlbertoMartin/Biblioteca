@@ -30,8 +30,8 @@ class EditorialCreateView(CreateView):
         'pais','codigo_postal','telefono',
         'email','sitio_web','fecha_fundacion',
     ]
-    template_name="libros/EditorialCreate.html"
-    success_url=reverse_lazy("books:libros_list")
+    template_name="editoriales/EditorialCreate.html"
+    success_url=reverse_lazy("editorial:list")
 
 
 class EditorialUpdateView(UpdateView):
@@ -41,11 +41,11 @@ class EditorialUpdateView(UpdateView):
         'pais','codigo_postal','telefono',
         'email','sitio_web','fecha_fundacion',
     ]
-    template_name="libros/EditorialUpdate.html"
-    success_url=reverse_lazy("books:libros_list")
+    template_name="editoriales/EditorialUpdate.html"
+    success_url=reverse_lazy("editorial:list")
 
 
 class EditorialDeleteView(DeleteView):
     model= Editorial
-    template_name="libros/EditorialDelete.html"
-    success_url=reverse_lazy("books:libros_list")
+    template_name="editoriales/EditorialDelete.html"
+    success_url=reverse_lazy("editorial:list")

@@ -7,12 +7,12 @@
 {% block page_content%}
     <p>Contenido de la pagina de Editoriales</p>
     <ul>
-        <li><a href="{% url 'books:editorial_create' %}">Añadir nueva editorial</a></li>
+        <li><a href="{% url 'editorial:create' %}">Añadir nueva editorial</a></li>
     </ul>
     <h2>Lista de editoriales</h2>
     <ul>
-        {% for editorial in editoriales %}
-        <li><a href="{% url 'books:editorial_detail' editorial.pk %}">{{ editorial.nombre }}</a></li>
+        {% for editorial in editoriales %} <!--por defecto, sería object_list, pero lo personalizamos en la clase ListView-->
+        <li><a href="{% url 'editorial:detail' editorial.pk %}">{{ editorial.nombre }}</a></li>
     {% endfor %}
     </ul> 
 {% endblock %}

@@ -9,13 +9,13 @@ from django.views.generic.detail import DetailView
 
 class LibroListView(ListView):
     model= Libro
-    template_name="libros/LibrosList.html"
+    template_name="libros/LibroList.html"
     context_object_name="libros"
 
 
 class LibroDetailView(DetailView):
     model= Libro
-    template_name = "libros/LibrosDetail.html"
+    template_name = "libros/LibroDetail.html"
     context_object_name = "libro"
 
     def get_context_data(self, **kwargs):
@@ -31,7 +31,7 @@ class LibroCreateView(CreateView):
         'genero','precio'
     ]
     template_name="libros/LibroCreate.html"
-    success_url=reverse_lazy("books:libros_list")
+    success_url=reverse_lazy("libro:list")
 
 
 class LibroUpdateView(UpdateView):
@@ -42,10 +42,10 @@ class LibroUpdateView(UpdateView):
         'genero','precio'
     ]
     template_name="libros/LibroUpdate.html"
-    success_url=reverse_lazy("books:libros_list")
+    success_url=reverse_lazy("libro:list")
 
 
 class LibroDeleteView(DeleteView):
     model= Libro
     template_name="libros/LibroDelete.html"
-    success_url=reverse_lazy("books:libros_list")
+    success_url=reverse_lazy("libro:list")
