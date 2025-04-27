@@ -1,0 +1,20 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Detalles del Autor{% endblock%}
+
+{% block page_title %}Detalles del Autor{% endblock %}
+
+{% block page_content%}
+    {% if autor %}
+        <h2>Detalles de autor</h2>
+        <ul>
+            <li>ID: {{ autor.id }}</li>
+            <li>Nombre: {{ autor.nombre }}</li>
+            <li>Fecha de Nacimiento: {{ autor.fec_nac|date:"d/m/Y" }}</li>
+        </ul>
+        <p>Volver a la lista de uatores: <a href="{% url 'books:autor_list' %}">LISTA DE AUTORES</a></p>
+    {% else %}
+        <h2>Autor no encontrado</h2>
+        <p>Puedes buscarlo en la <a href="{% url 'books:autor_list' %}">LISTA DE AUTORES</a>.</p>    
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Contacto{% endblock%}
+
+{% block page_title %}Pagina de Contacto {% endblock %}
+
+{% block page_content%}
+    <p>Contenido de la pagina de Contacto</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{formulario.as_p}}
+        <button>Enviar</button>
+    </form>
+    <p>Escribenos a </p><a href="mailto:albmarmat@gmail.com">Albmarmat@gmail.com</a></p>
+ 
+{% endblock %}

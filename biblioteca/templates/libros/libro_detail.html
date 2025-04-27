@@ -1,0 +1,21 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Detalles del libros {% endblock%}
+
+{% block page_title %}Detalles del Libros {% endblock %}
+
+{% block page_content%}
+
+    {% if libro %}
+        <h2>Detalles del libro</h2>
+        <ul>
+            <li>ID: {{ libro.id }}</li>
+            <li>Titulo: {{ libro.titulo }}</li>
+            <li>Fecha de publicacion: {{ libro.fecha_publicacion }}</li>
+        </ul>
+        <p>Volver a la lista de Libros: <a href="{% url 'books:libros_list' %}">LISTA DE LIBROS</a></p>
+    {% else %}
+        <h2>Libro no encontrada</h2>
+        <p>Puedes buscarlo en la <a href="{% url 'books:libros_list' %}">LISTA DE LIBROS</a>.</p>    
+    {% endif %}
+{% endblock %}

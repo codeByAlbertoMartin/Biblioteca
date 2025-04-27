@@ -1,0 +1,53 @@
+# Create your views here.
+from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from books.models import Libro
+from django.urls import reverse_lazy
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+
+def libros_view(request):
+    return render(request, "libros/libros.html")
+
+class LibrosListView(ListView):
+    model= Libro
+    template_name="libros/libros.html"
+    context_object_name="libros"
+
+class LibroDetailView(DetailView):
+    model= Libro
+    template_name = "libros/libro_detail.html"
+    context_object_name = "libro"
+
+    def get_context_data(self, **kwargs):
+        context =  super().get_context_data(**kwargs)
+        return context
+    
+class LibroCreateView(CreateView):
+    model= Libro
+    fields = [
+        'titulo',
+        'isbn',
+        'fecha_publicacion',
+        'numero_paginas'
+
+    ]
+    template_name="libros/libro_create.html"
+    success_url=reverse_lazy("books:libros_list")
+
+class LibroUpdateView(UpdateView):
+    model= Libro
+    fields = [
+        'titulo',
+        'isbn',
+        'fecha_publicacion',
+        'numero_paginas'
+
+    ]
+    template_name="libros/libro_update.html"
+    success_url=reverse_lazy("books:libros_list")
+
+class LibroDeleteView(DeleteView):
+    model= Libro
+    template_name="libros/libro_delete.html"
+    success_url=reverse_lazy("books:libros_list")
