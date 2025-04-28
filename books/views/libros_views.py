@@ -33,6 +33,11 @@ class LibroCreateView(CreateView):
     template_name="libros/LibroCreate.html"
     success_url=reverse_lazy("libro:list")
 
+    def form_valid(self, form):
+        #Definimos que el campo created_by sea el usuario que esta realizando la request
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
 
 class LibroUpdateView(UpdateView):
     model= Libro    

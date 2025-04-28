@@ -5,4 +5,5 @@
     <li><a href="{% url 'autor:list' %}">Autores</a></li>
     <li><a href="{% url 'search' %}">Buscar</a></li>
     <li><a href="{% url 'contacto' %}">Contacto</a></li>
+    <li>Usuarrio logueado: {{request.user.email }}</li>
 </ul>

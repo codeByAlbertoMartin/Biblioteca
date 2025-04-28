@@ -22,7 +22,8 @@ class AutorAdmin(ImportExportModelAdmin):
                     'apellido',
                     'fecha_nacimiento',
                     'email',
-                    'telefono']
+                    'telefono', 
+                    'created_by']
     
 
 @admin.register(Editorial)
@@ -32,7 +33,8 @@ class EditorialAdmin(admin.ModelAdmin):
                     'telefono',
                     'email',
                     'sitio_web',
-                    'fecha_fundacion']
+                    'fecha_fundacion',
+                    'created_by']
     list_filter = ['fecha_fundacion'] 
     ordering = ["nombre"]
     inlines = [
@@ -46,7 +48,8 @@ class LibroAdmin(admin.ModelAdmin):
                     'fecha_publicacion',
                     'numero_paginas',
                     'idioma',
-                    'editorial']
+                    'editorial',                   
+                    'created_by']
     list_filter = ['editorial', 'idioma']
     search_fields = ['titulo', 'autores__nombre']
     filter_horizontal = ['autores']

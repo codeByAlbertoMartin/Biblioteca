@@ -33,6 +33,11 @@ class EditorialCreateView(CreateView):
     template_name="editoriales/EditorialCreate.html"
     success_url=reverse_lazy("editorial:list")
 
+    def form_valid(self, form):
+        #Definimos que el campo created_by sea el usuario que esta realizando la request
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
 
 class EditorialUpdateView(UpdateView):
     model= Editorial
@@ -43,6 +48,9 @@ class EditorialUpdateView(UpdateView):
     ]
     template_name="editoriales/EditorialUpdate.html"
     success_url=reverse_lazy("editorial:list")
+
+    
+    
 
 
 class EditorialDeleteView(DeleteView):

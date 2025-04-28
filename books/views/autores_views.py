@@ -33,6 +33,11 @@ class AutorCreateView(CreateView):
     template_name="autores/AutorCreate.html"
     success_url=reverse_lazy("autor:list")
 
+    def form_valid(self, form):
+        #Definimos que el campo created_by sea el usuario que esta realizando la request
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
 
 class AutorUpdateView(UpdateView):
     model= Autor
