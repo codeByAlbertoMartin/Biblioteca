@@ -14,9 +14,12 @@
             <li>Email: {{ editorial.email }}</li>
             <li></li>
         </ul>
+        <a href="{% url 'editorial:update' editorial.pk %}">Modificar -- </a>
+        <a href="{% url 'editorial:delete' editorial.pk %}">Eliminar</a>
+
         <p>Volver a la lista de editoriales: <a href="{% url 'editorial:list' %}">LISTA DE EDITORIALES</a></p>
     {% else %}
         <h2>editorial no encontrada</h2>
-        <p>Puedes buscarlo en la <a href="{% url 'editorial:list'' %}">LISTA DE EDITORIALES</a>.</p>    
+        <p>Puedes buscarlo en la <a href="{% url 'editorial:list' %}">LISTA DE EDITORIALES</a>.</p>    
     {% endif %}
 {% endblock %}

@@ -13,6 +13,8 @@
             <li>Titulo: {{ libro.titulo }}</li>
             <li>Fecha de publicacion: {{ libro.fecha_publicacion }}</li>
         </ul>
+        <a href="{% url 'libro:update' libro.pk %}">Modificar -- </a>
+        <a href="{% url 'libro:delete' libro.pk %}">Eliminar</a>
         <p>Volver a la lista de Libros: <a href="{% url 'libro:list' %}">LISTA DE LIBROS</a></p>
     {% else %}
         <h2>Libro no encontrada</h2>

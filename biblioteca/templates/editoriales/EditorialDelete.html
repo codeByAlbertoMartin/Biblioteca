@@ -10,5 +10,6 @@
         {% csrf_token %}
         {{ form }}
         <button>Eliminar</button>
+        <p><a href="{% url 'editorial:detail' object.pk %}">Cancelar</a></p>
     </form> 
 {% endblock %}

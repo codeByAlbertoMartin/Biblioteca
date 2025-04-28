@@ -12,6 +12,8 @@
             <li>Nombre: {{ autor.nombre }}</li>
             <li>Fecha de Nacimiento: {{ autor.fec_nac|date:"d/m/Y" }}</li>
         </ul>
+        <a href="{% url 'autor:update' autor.pk %}">Modificar -- </a>
+        <a href="{% url 'autor:delete' autor.pk %}">Eliminar</a>
         <p>Volver a la lista de uatores: <a href="{% url 'autor:list' %}">LISTA DE AUTORES</a></p>
     {% else %}
         <h2>Autor no encontrado</h2>
