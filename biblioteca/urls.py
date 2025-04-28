@@ -7,7 +7,9 @@ from .views import home_view, contact_view, search_view
 
 urlpatterns = [
     path("", home_view, name="home"),
-    path("", include('books.urls', namespace="books")),#Tiene que coincidir con el nombre de la app en el fichero de urls.py de la app books
+    path('editorial/', include('books.urls.editorial_urls', namespace="editorial")),
+    path('libro/', include('books.urls.libro_urls', namespace="libro")),
+    path('autor/', include('books.urls.autor_urls', namespace="autor")),
     path("contacto/", contact_view, name="contacto"),
     path('admin/', admin.site.urls),
     path("buscar/", search_view, name="search")

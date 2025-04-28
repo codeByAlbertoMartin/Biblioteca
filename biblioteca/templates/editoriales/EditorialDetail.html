@@ -7,15 +7,19 @@
 {% block page_content%}
     {% if editorial %}
         <h2>Detalles de editorial</h2>
+        <h3>{{titulo}}</h3>
         <ul>
             <li>ID: {{ editorial.id }}</li>
             <li>Nombre: {{ editorial.nombre }}</li>
             <li>Email: {{ editorial.email }}</li>
             <li></li>
         </ul>
-        <p>Volver a la lista de editoriales: <a href="{% url 'books:editorial_list' %}">LISTA DE EDITORIALES</a></p>
+        <a href="{% url 'editorial:update' editorial.pk %}">Modificar -- </a>
+        <a href="{% url 'editorial:delete' editorial.pk %}">Eliminar</a>
+
+        <p>Volver a la lista de editoriales: <a href="{% url 'editorial:list' %}">LISTA DE EDITORIALES</a></p>
     {% else %}
         <h2>editorial no encontrada</h2>
-        <p>Puedes buscarlo en la <a href="{% url 'books:editorial_list' %}">LISTA DE EDITORIALES</a>.</p>    
+        <p>Puedes buscarlo en la <a href="{% url 'editorial:list' %}">LISTA DE EDITORIALES</a>.</p>    
     {% endif %}
 {% endblock %}

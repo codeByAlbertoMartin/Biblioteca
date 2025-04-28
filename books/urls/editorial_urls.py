@@ -1,12 +1,12 @@
 from django.urls import path # type: ignore
-from books.view import EditorialListView, EditorialDetailView, EditorialCreateView, EditoriaDeleteView, EditorialUpdateView
+from books.views.editoriales_views import EditorialListView, EditorialDetailView, EditorialCreateView, EditorialDeleteView, EditorialUpdateView
 
-app_name = "books"
+app_name = "editorial"
 
 urlpatterns = [   
-    path("list/", EditorialListView.as_view(), name="editorial_lista"),
-    path("detail/<pk>", EditorialDetailView.as_view(), name="editorial_lista"),
-    path("create/", EditorialCreateView, name="editorial_create"),
-    path("delete/<pk>", EditoriaDeleteView, name="editorial_delete"),
-    path("update/<pk>", EditorialUpdateView.as_view(), name="editorial_update"),    
+    path("list/", EditorialListView.as_view(), name="list"),
+    path("detail/<pk>", EditorialDetailView.as_view(), name="detail"),
+    path("create/", EditorialCreateView.as_view(), name="create"),
+    path("delete/<pk>", EditorialDeleteView.as_view(), name="delete"),
+    path("update/<pk>", EditorialUpdateView.as_view(), name="update"),    
 ]

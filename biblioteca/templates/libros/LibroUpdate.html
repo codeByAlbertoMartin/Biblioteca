@@ -1,0 +1,15 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Libros{% endblock%}
+
+{% block page_title %}Pagina de Libros {% endblock %}
+
+{% block page_content%}
+    <h2>Editar libro</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Guardar</button>
+        <<a href="{% url 'libro:detail' object.pk %}">Cancelar</a>
+    </form> 
+{% endblock %}
