@@ -50,10 +50,16 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    #Comprobar que el usuario autenticado sigue en la misma sesión
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    #Middleware de mensajeria
     'django.contrib.messages.middleware.MessageMiddleware',
+    #Evitar el Clickjacking (atacante engaña haciendo clickar en algo diferente a lo que el usuario cree)
+    #Sanetiza el código para no poder ejecutar código malicioso
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'books.custom_middleware.TiempoDeProcesamientoMiddleware',
+
 ]
 
 ROOT_URLCONF = 'biblioteca.urls'
