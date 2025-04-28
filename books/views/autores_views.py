@@ -10,7 +10,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 class AutorListView(ListView):
     model= Autor
     template_name="autores/AutorList.html"
-    context_object_name="libros"
+    context_object_name="autores"
 
 
 class AutorDetailView(DetailView):
