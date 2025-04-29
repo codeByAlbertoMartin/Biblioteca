@@ -74,7 +74,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+                'biblioteca.context_processor.get_current_year_context_processor',
+                'biblioteca.context_processor.get_statistic_books',
+            ]
         },
     },
 ]
