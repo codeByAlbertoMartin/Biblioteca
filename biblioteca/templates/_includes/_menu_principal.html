@@ -10,3 +10,13 @@
         <li>Usuarrio logueado: {{request.user.email }}</li>
     {% endif %}
 </ul>
+
+{% if messages %}
+<section>
+    <ul>
+    {% for message in messages %}
+        <li class="message {{ message.tags }}">{{ message }}  - Categoria {{message.tags}}</li>
+    {% endfor %}
+    </ul>
+</section>
+{% endif %}

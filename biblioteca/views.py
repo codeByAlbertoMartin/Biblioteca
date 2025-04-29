@@ -3,8 +3,11 @@ from django.shortcuts import render # type: ignore
 from books.forms import SearchForm
 from .form import ContactForm
 from books.models import Autor, Libro, Editorial
-#Vistas generales de la aplicacion
+
+from django.contrib import messages
+#Vistas generales de  la aplicacion
 def home_view(request):
+    messages.error(request, "Formulario enviado correctamente")
     return render(request, "general/home.html")
 
 # def contact_view(request):
@@ -66,6 +69,7 @@ def contact_view(request):
                 "formulario": formulario,
                 "success": True,
             }
+            messages.info(request, "Formulario enviado correctamente") #De esta forma el mensaje se puede ver una vez solamente, que es lo que se quiere
             return render(request, "general/contacto.html", context)
         else: 
             context = {
