@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "debug_toolbar",
+    "rosetta",
     'django_extensions',
     'import_export',
 
@@ -118,15 +119,28 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'es-ES'
+
 
 TIME_ZONE = 'Europe/Madrid'
 
+#Configuración de internalización
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGE_CODE = 'es-ES'
 
+LANGUAGES = [
+    ("en", "English"),
+    ("es", "Español")
+]
+
+#Deinir la ruta donde se almacenaran los archivos de traducción
+LOCATE__PATH = [
+    BASE_DIR  / "locale", #locale será la carpeta donde se guardarán las traducciones
+]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 

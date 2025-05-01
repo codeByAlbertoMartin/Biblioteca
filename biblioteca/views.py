@@ -5,9 +5,10 @@ from .form import ContactForm
 from books.models import Autor, Libro, Editorial
 
 from django.contrib import messages
+from django.utils.translation import gettext as _
 #Vistas generales de  la aplicacion
 def home_view(request):
-    messages.error(request, "Formulario enviado correctamente")
+    messages.error(request, _("Formulario enviado correctamente"))
     return render(request, "general/home.html")
 
 # def contact_view(request):

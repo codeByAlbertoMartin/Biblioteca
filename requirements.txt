@@ -1,0 +1,7 @@
+asgiref==3.8.1
+Django==5.2
+django-debug-toolbar==5.1.0
+django-extensions==4.1
+django-import-export==4.3.7
+django-rosetta==0.10.2
+sqlparse==0.5.3
