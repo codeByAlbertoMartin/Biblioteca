@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-30 13:52+0200\n"
-"PO-Revision-Date: 2025-04-30 13:55+0200\n"
+"POT-Creation-Date: 2025-05-02 20:13+0200\n"
+"PO-Revision-Date: 2025-05-02 20:14+0200\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,11 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.2\n"
 
-#: biblioteca/templates/_includes/_menu_principal.html:2
+#: biblioteca/templates/_includes/_menu_principal.html:3
 msgid "Menú principal"
-msgstr "Principal menu"
+msgstr "Principal Menu"
 
-#: biblioteca/views.py:11
+#: biblioteca/templates/_includes/_menu_principal.html:16
+msgid "Cambiar"
+msgstr "Change"
+
+#: biblioteca/templates/_includes/_menu_principal.html:19
+msgid "Inicio"
+msgstr "Home"
+
+#: biblioteca/views.py:19
 msgid "Formulario enviado correctamente"
 msgstr ""
 

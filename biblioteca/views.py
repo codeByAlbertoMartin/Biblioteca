@@ -1,4 +1,9 @@
-from django.shortcuts import render # type: ignore
+from django.utils import translation
+from django.http import HttpResponseRedirect
+from django.conf import settings
+
+from django.shortcuts import render
+from django.views.generic import View # type: ignore
 
 from books.forms import SearchForm
 from .form import ContactForm
@@ -6,9 +11,13 @@ from books.models import Autor, Libro, Editorial
 
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from django.utils.translation import get_language
+
+
 #Vistas generales de  la aplicacion
 def home_view(request):
     messages.error(request, _("Formulario enviado correctamente"))
+    print("IDIOMA ACTUAL:", get_language())  
     return render(request, "general/home.html")
 
 # def contact_view(request):

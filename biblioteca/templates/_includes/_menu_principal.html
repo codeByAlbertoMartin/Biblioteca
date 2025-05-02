@@ -1,7 +1,22 @@
 {% load i18n %}
+
 <h5>{% trans 'Menú principal' %}</h5>
+
+<form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <select name="language">        
+        {% get_current_language as LANGUAGE_CODE %}
+        {% for lang_code, lang_name in LANGUAGES %}
+            <option value="{{ lang_code}}" {% if LANGUAGE_CODE == lang_code  %} selected {% endif %}>
+                {{ lang_name}} [{{ lang_code}}]
+            </option>
+        {% endfor %}
+    </select>
+    <input type="hidden" name="next" value="{{ request.path }}">
+    <button type="submit">{% trans 'Cambiar' %}</button>
+</form>
 <ul>
-    <li><a href="{% url 'home' %}">Inicio</a></li>
+    <li><a href="{% url 'home' %}">{% trans "Inicio" %}</a></li>
     <li><a href="{% url 'editorial:list' %}">Editoriales</a></li>
     <li><a href="{% url 'libro:list' %}">Libros</a></li>
     <li><a href="{% url 'autor:list' %}">Autores</a></li>
@@ -12,6 +27,7 @@
         <li>Usuarrio logueado: {{request.user.email }}</li>
     {% endif %}
 </ul>
+
 
 {% if messages %}
 <section>
