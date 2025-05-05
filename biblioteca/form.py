@@ -1,16 +1,17 @@
 from django import forms # type: ignore
+from django.utils.translation import gettext_lazy as _ # type: ignore
 
 class ContactForm(forms.Form):
     
     nombre= forms.CharField(
-        label="Nombre",
+        label=_("Nombre"),
         max_length=140
     )
 
-    email = forms.EmailField(label="Email")
+    email = forms.EmailField(label=_("Email"))
 
     comentario = forms.CharField(
-        label="Comentario",
+        label=_("Comentario"),
         max_length=1000,
         widget=forms.Textarea)
     

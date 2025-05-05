@@ -1,6 +1,7 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Contacto{% endblock%}
+{% load i18n %} 
+{% block head_title %}{% trans "Contact" %}{% endblock%}
 
 {% block page_title %}Pagina de Contacto {% endblock %}
 
@@ -9,7 +10,7 @@
     <form action="" method="post">
         {% csrf_token %}
         {{formulario.as_p}}
-        <button>Enviar</button>
+        <button>{% trans 'Enviar' %}</button>
     </form>
     <p>Escribenos a </p><a href="mailto:albmarmat@gmail.com">Albmarmat@gmail.com</a></p>
  

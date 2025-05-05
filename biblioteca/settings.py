@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "rosetta",
     'django_extensions',
     'import_export',
+    'modeltranslation',
 
     'books',
 ]
@@ -146,6 +147,11 @@ PREFIX_DEFAULT_LANGUAGE = "es" #Prefijo del idioma por defecto
 LOCALE_PATHS = [BASE_DIR / "locale"]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = "es" #Idioma por defecto para la traducción de los modelos
+MODELTRANSLATION_LANGUAGES = ('es', 'en') #Idiomas que se van a traducir
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('es', 'en') #Idiomas que se van a traducir
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'es' #Idioma por defecto para la traducción de los modelos
 
 STATIC_URL = 'static/'
 
