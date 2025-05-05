@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-02 20:13+0200\n"
-"PO-Revision-Date: 2025-05-02 20:14+0200\n"
+"POT-Creation-Date: 2025-05-05 16:40+0200\n"
+"PO-Revision-Date: 2025-05-05 16:42+0200\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,6 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.2\n"
+
+#: biblioteca/form.py:7
+msgid "Nombre"
+msgstr "Name"
+
+#: biblioteca/form.py:11
+msgid "Email"
+msgstr "Mail"
+
+#: biblioteca/form.py:14
+msgid "Comentario"
+msgstr "Comment"
 
 #: biblioteca/templates/_includes/_menu_principal.html:3
 msgid "Menú principal"
@@ -30,6 +42,14 @@ msgstr "Change"
 #: biblioteca/templates/_includes/_menu_principal.html:19
 msgid "Inicio"
 msgstr "Home"
+
+#: biblioteca/templates/general/contacto.html:3
+msgid "Contact"
+msgstr "Contact"
+
+#: biblioteca/templates/general/contacto.html:12
+msgid "Enviar"
+msgstr "Send"
 
 #: biblioteca/views.py:19
 msgid "Formulario enviado correctamente"
